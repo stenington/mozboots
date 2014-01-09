@@ -10,8 +10,6 @@ module.exports = {
     var self = window.app = this;
 
     window.me = new Me();
-    me.fetch();
-    setInterval(function () { me.timeOnSite++; }, 1000);
 
     new Router();
     app.history = Backbone.history;
@@ -24,6 +22,16 @@ module.exports = {
       self.view.render();
       app.history.start({root: '/'});
     });
+  },
+
+  renderPage: function (view) {
+    var container = $('#pages');
+
+    if (app.currentPage)
+      app.currentPage.hide();
+
+    app.currentPage = view;
+    container.append(view.show().el);
   }
 };
 
