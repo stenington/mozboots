@@ -9,8 +9,9 @@ module.exports = function (app, config) {
   var opts = _.extend({
     main: path.join(__dirname, '/clientapp/app.js'),
     developmentMode: true,
+    templateFile: path.join(__dirname, '/app.html'),
     libraries: [
-      path.join(__dirname, '/node_modules/jquery/dist/jquery.js') 
+      path.join(__dirname, '/node_modules/jquery/dist/jquery.js')
     ],
     stylesheets: [],
     beforeBuildJS: function () {

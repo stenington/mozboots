@@ -14,13 +14,46 @@ module.exports = {
     new Router();
     app.history = Backbone.history;
 
-    $(function () {
-      self.view = new MainView({
-        model: me,
-        el: document.body
+    navigator.id.watch({
+      loggedInUser: undefined,
+      onlogin: function (assertion) {
+        console.log('onlogin called');
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/persona/verify", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.addEventListener("loadend", function(e) {
+          var data = JSON.parse(this.responseText);
+          if (data && data.status === "okay") {
+            me.loggedInUser = data.email;
+            me.synced = true;
+          }
+        }, false);
+
+        xhr.send(JSON.stringify({
+          assertion: assertion
+        }));
+      },
+      onlogout: function () {
+        console.log('onlogout called');
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/persona/logout", true);
+        xhr.addEventListener("loadend", function(e) {
+          me.loggedInUser = null;
+          me.synced = true;
+        });
+        xhr.send();
+      }
+    });
+
+    me.on('change:synced', function () {
+      $(function () {
+        self.view = new MainView({
+          model: me,
+          el: $('div', document.body) // don't clobber the body
+        });
+        self.view.render();
+        app.history.start({root: '/'});
       });
-      self.view.render();
-      app.history.start({root: '/'});
     });
   },
 

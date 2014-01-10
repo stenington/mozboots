@@ -3,9 +3,7 @@ var lineno = null;
 var colno = null;
 var output = "";
 try {
-output += "<body>\n  <header>\n    Hi ";
-output += runtime.suppressValue(runtime.memberLookup((runtime.contextOrFrameLookup(context, frame, "me")),"name", env.autoesc), env.autoesc);
-output += "!\n  </header>\n  <section id=\"pages\">\n  </section>\n</body>\n";
+output += "<div>\n  <header>\n    Hi <span class=\"name\"></span>!\n    <button class=\"login\">Log in</button>\n    <button class=\"logout\">Log out</button>\n  </header>\n  <section id=\"pages\">\n  </section>\n</div>\n";
 cb(null, output);
 ;
 } catch (e) {
