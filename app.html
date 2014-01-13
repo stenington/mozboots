@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<!-- We provide our own app template to:
+       * include persona
+       * include foundation in the body (pre-5.0.3)
+       * prevent body clobbering with an extra div (so persona's hidden iframe isn't lost)
+-->
 <head>
   <script src="https://login.persona.org/include.orig.js"></script>
   <script src="#{jsFileName}"></script>
