@@ -5,12 +5,13 @@ module.exports = HumanView.extend({
   template: templates.body,
 
   textBindings: {
-    name: '.name'
+    name: '.username'
   },
 
   events: {
     'click .login': 'login',
-    'click .logout': 'logout'
+    'click .logout': 'logout',
+    'click a[data-page]': 'page'
   },
 
   render: function () {
@@ -18,11 +19,22 @@ module.exports = HumanView.extend({
     this.renderAndBind({me: me});
   },
 
-  login: function () {
+  login: function (e) {
     navigator.id.request();
+    e.preventDefault();
+    return false;
   },
 
-  logout: function () {
+  logout: function (e) {
     navigator.id.logout();
+    e.preventDefault();
+    return false;
+  },
+
+  page: function (e) {
+    var name = $(e.target).data('page');
+    app.router.navigate("page/" + name, { trigger: true });
+    e.preventDefault();
+    return false;
   }
 });

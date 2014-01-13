@@ -8,7 +8,8 @@ module.exports = HumanModel.define({
       default: null,
       allowNull: true
     },
-    synced: ['boolean', true, false]
+    synced: ['boolean', true, false],
+    personaLagMs: ['number', true, 0]
   },
 
   derived: {

@@ -1,19 +1,19 @@
 var Backbone = require('backbone');
 var WelcomePage = require('./pages/welcome');
-var NextPage = require('./pages/next');
+var pages = require('./pages/');
 
 module.exports = Backbone.Router.extend({
   routes: {
     '': 'welcome',
-    'next': 'next'
+    'page/:name': 'page'
   },
   welcome: function () {
     app.renderPage(new WelcomePage({
       model: me
     }));
   },
-  next: function () {
-    app.renderPage(new NextPage({
+  page: function (name) {
+    app.renderPage(new pages[name]({
       model: me
     }));
   }

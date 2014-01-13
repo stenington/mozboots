@@ -8,5 +8,8 @@ module.exports = HumanView.extend({
   hide: function () {
     this.remove();
     return this;
+  },
+  render: function () {
+    this.renderAndBind();
   }
 });
