@@ -13,3 +13,10 @@ You will need `npm` and `bower`.
 
 Then navigate to http://localhost:3001 and explore from there.
 
+## Todos
+
+* advanced templating
+    * includes, partials
+    * blocks and block overriding
+* backbone.js sync
+    * provide a REST API to data and use it
