@@ -1,0 +1,19 @@
+{
+  "name": "moonboots",
+  "version": "0.0.1",
+  "authors": [
+    "Mike Larsson <mikelarssonftw@gmail.com>"
+  ],
+  "main": "server.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.0.2"
+  }
+}

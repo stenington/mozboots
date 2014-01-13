@@ -15,8 +15,8 @@ module.exports = function (app, config) {
       path.join(__dirname, '/bower_components/foundation/js/vendor/custom.modernizr.js'),
       path.join(__dirname, '/bower_components/foundation/js/vendor/jquery.js'),
       path.join(__dirname, '/bower_components/foundation/js/vendor/fastclick.js'),
-      path.join(__dirname, 'bower_components/foundation/js/foundation/foundation.js'),
-      path.join(__dirname, 'bower_components/foundation/js/foundation/foundation.topbar.js')
+      //path.join(__dirname, 'bower_components/foundation/js/foundation/foundation.js'), until 5.0.3 this has to be in body, see ./app.html
+      //path.join(__dirname, 'bower_components/foundation/js/foundation/foundation.topbar.js')
     ],
     stylesheets: [
       path.join(__dirname, '/normalize.css'),

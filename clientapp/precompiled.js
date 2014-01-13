@@ -37,7 +37,7 @@ var lineno = null;
 var colno = null;
 var output = "";
 try {
-output += "<section class=\"page row\" id=\"instructions\">\n  <div class=\"small-12 columns\">\n    <h1>Instructions</h1>\n\n    <h2>Login</h2>\n    <p>Login is handled with the Persona Observer API.</p> \n    <p>The app lets Persona manage user state between page refreshes and displays a wait message while \n      synchronization happens. Because routing should otherwise be handled by the client application,\n      this screen should really only be seen by a user when they first visit the app.\n    </p>\n    <p>To see this screen in action, refresh any page. To force a delay add <a href=\"?personaLagMs=3000\">?personaLagMs=3000</a> or some other\n      millisecond value to the url.\n    </p>\n\n    <h2>Stuff</h2>\n  </div>\n</section>\n";
+output += "<section class=\"page row\" id=\"instructions\">\n  <div class=\"small-12 columns\">\n    <h1>Instructions</h1>\n\n    <h2>Login</h2>\n    <p>Login is handled with the Persona Observer API.</p> \n    <p>The app lets Persona manage user state between page refreshes and displays a wait message while \n      synchronization happens. Because routing should otherwise be handled by the client application,\n      this screen should really only be seen by a user when they first visit the app.\n    </p>\n    <p>To see this screen in action, refresh any page. To force a delay add <a href=\"?personaLagMs=3000\">?personaLagMs=3000</a> or some other\n      millisecond value to the url.\n    </p>\n  </div>\n</section>\n";
 cb(null, output);
 ;
 } catch (e) {
