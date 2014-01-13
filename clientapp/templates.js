@@ -1,5 +1,5 @@
 var nunjucks = require('nunjucks');
-var templates = require('./precompiled.js');
+var templates = require('./build/precompiled.js');
 var path = require('path');
 
 module.exports = {};

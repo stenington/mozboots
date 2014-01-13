@@ -19,8 +19,8 @@ module.exports = function (app, config) {
       //path.join(__dirname, 'bower_components/foundation/js/foundation/foundation.topbar.js')
     ],
     stylesheets: [
-      path.join(__dirname, '/normalize.css'),
-      path.join(__dirname, '/styles.css') 
+      path.join(__dirname, '/clientapp/build/normalize.css'),
+      path.join(__dirname, '/clientapp/build/styles.css') 
     ],
     beforeBuildJS: function () {
       console.log("Building JS...");
@@ -33,14 +33,14 @@ module.exports = function (app, config) {
           include: [/.*\.html/]
         }
       );
-      fs.writeFileSync(path.join(__dirname, '/clientapp/precompiled.js'), templates);
+      fs.writeFileSync(path.join(__dirname, '/clientapp/build/precompiled.js'), templates);
     },
     beforeBuildCSS: function () {
       console.log("Compiling SCSS...");
-      fs.writeFileSync(path.join(__dirname, '/styles.css'), sass.renderSync({
+      fs.writeFileSync(path.join(__dirname, '/clientapp/build/styles.css'), sass.renderSync({
         file: path.join(__dirname, '/bower_components/foundation/scss/foundation.scss')
       }));
-      fs.writeFileSync(path.join(__dirname, '/normalize.css'), sass.renderSync({
+      fs.writeFileSync(path.join(__dirname, '/clientapp/build/normalize.css'), sass.renderSync({
         file: path.join(__dirname, '/bower_components/foundation/scss/normalize.scss')
       }));
     },
