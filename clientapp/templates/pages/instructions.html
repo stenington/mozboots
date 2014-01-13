@@ -11,5 +11,16 @@
     <p>To see this screen in action, refresh any page. To force a delay add <a href="?personaLagMs=3000">?personaLagMs=3000</a> or some other
       millisecond value to the url.
     </p>
+
+    <h2>Route handling</h2>
+    <p>Routes are handled by Backbone.Router using HTML5 pushState support where available. The client app is
+      served from most urls without any server-side rendering, at this point. This has several drawbacks, and 
+      alternatives can be explored in future iterations of this sandbox.
+    </p>
+
+    <h2>Templates</h2>
+    <p>Templating uses precompiled nunjucks templates. clientapp/templates.js is a thin wrapper over the nunjucks API to
+      conform to the convention set forth in Human Javascript.
+    </p>
   </div>
 </section>
