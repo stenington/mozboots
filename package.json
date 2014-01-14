@@ -14,11 +14,15 @@
     "query-param-getter": "0.0.1",
     "backbone": "~1.1.0",
     "human-model": "~2.6.0",
-    "human-view": "~1.5.0"
+    "human-view": "~1.5.0",
+    "bower": "~1.2.8"
   },
   "devDependencies": {},
   "main": "server.js",
   "engines": {
     "node": "0.10.x"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install"
   }
 }

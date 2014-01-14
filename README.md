@@ -7,7 +7,6 @@ You will need `npm` and `bower`.
 
 ```bash
   npm install
-  bower install
   npm start
 ```
 
