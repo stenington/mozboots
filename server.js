@@ -5,13 +5,15 @@ var persona = require('express-persona');
 var _ = require('underscore');
 var path = require('path');
 
+const PORT = process.env.PORT || 3001;
+
 var app = express();
 
 app.use(express.json());
 app.use(express.cookieParser());
 
 persona(app, {
-  audience: 'http://localhost:3001'
+  audience: 'http://localhost:' + PORT
 });
 
 var todos = [
@@ -50,6 +52,6 @@ app.delete('/todos/:id', function (req, res, next) {
 var clientApp = clientApp(app);
 app.get('*', clientApp.html());
 
-app.listen('3001', function () {
-  console.log('Listening on 3001');
+app.listen(PORT, function () {
+  console.log('Listening on', PORT);
 });
