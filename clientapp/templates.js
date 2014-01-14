@@ -12,5 +12,5 @@ Object.keys(window.nunjucksPrecompiled).forEach(function (name) {
     if (!obj[step]) obj[step] = {};
     obj = obj[step];
   });
-  obj[methodName] = nunjucks.render.bind(null, name);
+  obj[methodName] = nunjucks.render.bind(nunjucks, name);
 });
