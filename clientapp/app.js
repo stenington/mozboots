@@ -23,6 +23,9 @@ function startPersona (opts) {
         if (data && data.status === "okay") {
           opts.onloginSuccess.call(this, data.email);
         }
+        else {
+          console.log('Persona error', data);
+        }
       }, false);
 
       xhr.send(JSON.stringify({
