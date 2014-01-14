@@ -5,6 +5,7 @@ var Router = require('./router');
 var MainView = require('./views/main');
 var WaitingPage = require('./pages/wait');
 var Me = require('./models/me');
+var Todos = require('./models/todos');
 
 function startPersona (opts) {
   opts.onloginSuccess = opts.onloginSuccess || function () {};
@@ -46,6 +47,22 @@ module.exports = {
 
     window.me = new Me({
       personaLagMs: parseInt(queryParam('personaLagMs')) || 0
+    });
+
+    self.todos = new Todos();
+    self.todos.fetch({noSave: true});
+    self.todos.on('add', function (model, collection, opts) {
+      if (!opts.noSave) model.save();
+    });
+    self.todos.on('change', function (model) {
+      if (model.hasChanged()) {
+        var fields = Object.keys(model.changedAttributes());
+        if (fields.length === 1 && fields[0] === 'id') return;
+      }
+      model.save(); 
+    });
+    self.todos.on('all', function () {
+      //console.log('EVERYTHING!', arguments);
     });
 
     app.router = new Router();

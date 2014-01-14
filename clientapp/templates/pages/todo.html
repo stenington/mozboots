@@ -1,0 +1,12 @@
+{% extends "pages/base.html" %}
+{% block content %}
+  <h1>To-do App</h1>
+  <p>This page exists to play around with Backbone and do some more interactive, appy stuff.</p>
+  <p>There's no real DB on the backend, so the data will reset on server reset.</p>
+  <h2>To-dos:</h2>
+  <ul class="todo-list">
+  </ul>
+  <input class="new-todo-name" type="text" placeholder="Enter to-do here">
+  <button class="add-todo" type="submit">Add new</button>
+  <button class="remove-done" type="submit">Clear completed</button>
+{% endblock %}

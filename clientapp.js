@@ -20,7 +20,8 @@ module.exports = function (app, config) {
     ],
     stylesheets: [
       path.join(__dirname, '/clientapp/build/normalize.css'),
-      path.join(__dirname, '/clientapp/build/styles.css') 
+      path.join(__dirname, '/clientapp/build/styles.css'),
+      path.join(__dirname, '/clientapp/style.css') 
     ],
     beforeBuildJS: function () {
       console.log("Building JS...");
