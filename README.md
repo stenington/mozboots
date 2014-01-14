@@ -19,3 +19,4 @@ Alternatively, this app can run on [Heroku](https://devcenter.heroku.com/article
     * blocks and block overriding
 * deeper integration with foundation
     * use foundation mixins
+* add error handling

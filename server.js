@@ -5,6 +5,7 @@ var nunjucks = require('nunjucks');
 var persona = require('express-persona');
 
 const PORT = process.env.PORT || 3001;
+const URL = process.env.URL || 'http://localhost:' + PORT;
 
 var app = express();
 
@@ -12,7 +13,7 @@ app.use(express.json());
 app.use(express.cookieParser());
 
 persona(app, {
-  audience: 'http://localhost:' + PORT
+  audience: URL
 });
 
 api(app);
